@@ -1,0 +1,43 @@
+RecipeBox component will have:
+All of the state for the project
+Functions for:
+getRecipes
+addRecipe
+editRecipe
+In your JSX, you will return:
+Add recipe modal, which will have an initial state of hidden
+Edit recipe modal
+your map that will display all the recipes in the collection
+
+
+import React, { useState } from “react”;
+ import { Modal, Button } from “react-bootstrap”;
+all other imports
+start your compnent:
+const Component {
+    all of your state
+all of your functions, for saveButton, deleteButton, addButton getting them from the database:
+1. getRecipes for when page first loads, AND
+2. useEffect that calls getRecipes anytime the array changes, which means you will pass in an empty array as useEffect’s dependency array
+also 2 functions for edit - come to office hours when you get there
+all of yuor JSX, you will return:
+1. Add recipe modal
+2. Edit recipe modal
+3. your accordion inside of a map that will display an accordion for each object in the recipes array/collection
+}
+ export default EditRecipeModal;
+how to add connect functionality for modal to change/update the database
+**************************
+ const saveRecipe = async (e) => {
+         e.preventDefault();
+     const ingredientsArray = ingredients.split(“,”);
+     await db.collection(“recipes”).doc(“reciepe.id”).add({
+
+      title,
+             ingredients: ingredientsArray,
+
+    });
+
+    setTitle(“”);
+
+    SetIngredients(“”);
